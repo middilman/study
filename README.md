@@ -35,13 +35,12 @@ $ bundle exec rtanque start bots/my_bot sample_bots/keyboard sample_bots/camper:
 *Drive the Keyboard bot with asdf. Aim/fire with the arrow keys*
 
 
-
 [http://awilliams.github.com/RTanque/](http://awilliams.github.com/RTanque/)
 
 
 ## Challenge questions (put your name next to the answer if you're first)
 
--   Why doesn't 'git status' complain about the rtanque subfolder?
+-   Why doesn't 'git status' complain about the rtanque subfolder?  
 	ANSWER:  You have the folder "/rtanque/*" listed under the .gitignore folder.  Miles
 
 ## What we've learned so far:
