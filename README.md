@@ -8,10 +8,11 @@ We will improve our programming skills by meeting weekly and working on programm
 - ruby on rails
 - rspec, cucumber
 - coffeescript
-- git
+- git: forking on github
 - unix/linux command line
 - development tools / IDEs: RubyMine, vim, sublime text
 - managing / setting up a webserver
+- IRC: limechat
 
 ## Schedule
 ### week 1
@@ -23,13 +24,15 @@ Prep:
   
 ##### Quick Start:
 
-mkdir rtanque; cd rtanque  
-echo '1.9.3' > .ruby-version  
-bundle init  
-echo "gem 'rtanque', :github => 'awilliams/RTanque'" >> Gemfile  
-bundle  
-bundle exec rtanque init my_bot  
-bundle exec rtanque start sample_bots/keyboard bots/my_bot  
+$ mkdir rtanque; cd rtanque  
+$ echo '1.9.3' > .ruby-version  
+$ bundle init  
+$ echo "gem 'rtanque'" >> Gemfile
+$ bundle  
+$ bundle exec rtanque new_bot my_bot  
+$ bundle exec rtanque start bots/my_bot sample_bots/keyboard sample_bots/camper:x2
+
+*Drive the Keyboard bot with asdf. Aim/fire with the arrow keys*
 
 
 [http://awilliams.github.com/RTanque/](http://awilliams.github.com/RTanque/)
