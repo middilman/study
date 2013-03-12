@@ -21,7 +21,8 @@ What:  Ruby and RTanque: __Battle day__
 Prep:  
 [ruby-doc.org](http://www.ruby-doc.org/core-2.0/) ::: Bookmark it!   
 If you didn't do the quick start (below) before, do it for this time.  
-Fork the github repository so you can share your bot via pull request.  
+Fork [steptan's RTanque github repo](https://github.com/steptan/RTanque) so you can share your bot via pull request  
+git@github.com:steptan/RTanque.git  
 __come ready to battle__  
 
 ### *week 1*
@@ -42,7 +43,7 @@ bundle
 bundle exec rtanque new\_bot my\_bot  
 bundle exec rtanque start bots/my\_bot sample\_bots/keyboard sample\_bots/camper:x2  
 ```
-*Drive the Keyboard bot with asdf. Aim/fire with the arrow keys*
+*Drive the Keyboard bot with asdf. Aim/fire with the arrow keys*  
 [http://awilliams.github.com/RTanque/](http://awilliams.github.com/RTanque/)
 
 
