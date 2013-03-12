@@ -11,7 +11,6 @@ We will improve our programming skills by meeting weekly and working on programm
 - unix/linux command line
 - development tools / IDEs: RubyMine, vim, sublime text
 - managing / setting up a webserver
-- IRC: limechat
 
 ## Schedule
 ### *week 2*
