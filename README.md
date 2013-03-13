@@ -92,23 +92,24 @@ so + is a method on the Number class
 * every method returns the last thing
 * [irb](http://www.ruby-doc.org/docs/ProgrammingRuby/html/irb.html) is a great way to quickly test stuff and learn Ruby from the command line
 __ Try this in irb:__  
-you can concatenate Strings in Ruby 
+you can concatenate Strings in Ruby   
 ```ruby
     "Hi," + " there"
-```
-you cannot do this:
+```  
+you cannot do this:  
 ```ruby
     5 + " little monkeys"
-```
-why not? duck typing. Ruby finds 5, wants to do arithmetic
+```  
+why not? duck typing. Ruby finds 5, wants to do arithmetic  
 ```ruby
     5 + 5
-```
-works, because now it can do concatination "5" + " little monkeys"
+```  
+this works:
 ```ruby
     5.to_s + " little monkeys"
-```
+```  
 
+because now Ruby can concatinate 2 Strings: "5" and " little monkeys"  
 
 
 ### week 0
