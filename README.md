@@ -40,8 +40,8 @@ echo '1.9.3' > .ruby-version
 bundle init  
 echo "gem 'rtanque'" >> Gemfile  
 bundle  
-bundle exec rtanque new\_bot my\_bot  
-bundle exec rtanque start bots/my\_bot sample\_bots/keyboard sample\_bots/camper:x2  
+bundle exec rtanque new_bot my_bot  
+bundle exec rtanque start bots/my_bot sample_bots/keyboard sample_bots/camper:x2  
 ```
 *Drive the Keyboard bot with asdf. Aim/fire with the arrow keys*  
 [http://awilliams.github.com/RTanque/](http://awilliams.github.com/RTanque/)
