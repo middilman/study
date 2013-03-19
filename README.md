@@ -54,9 +54,18 @@ bundle exec rtanque start bots/my_bot sample_bots/keyboard sample_bots/camper:x2
 -   Who has forked this git repo on github?  
     -   *COOLEST FIRST:*
 
-## What we've learned so far:
-### week 1 (20130305)
-#### [Ruby](http://www.rubyist.net/~slagell/ruby/index.html) basics
+## What we've learned
+### git
+History:  
+```git
+git log  
+```
+History with changes:  
+```git
+git log -p  
+```
+
+### [Ruby](http://www.rubyist.net/~slagell/ruby/index.html) basics
 * everything in Ruby is an [Object](http://www.ruby-doc.org/core-2.0/Object.html)
 * [Object](http://www.ruby-doc.org/core-2.0/Object.html) are created from [Classes](http://www.rubyist.net/~slagell/ruby/classes.html)
 * every [Class](http://www.rubyist.net/~slagell/ruby/classes.html) extends another class, all the way back to [Object](http://www.ruby-doc.org/core-2.0/Object.html)  
@@ -112,7 +121,7 @@ this works:
 because now Ruby can concatinate 2 Strings: "5" and " little monkeys"  
 
 
-### week 0
+### markdown
 [markdown cheat sheet](http://support.mashery.com/docs/customizing_your_portal/Markdown_Cheat_Sheet)
 - to force a line break, end a line with two spaces  
 - to make a link, 
