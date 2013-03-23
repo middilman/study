@@ -13,15 +13,32 @@ We will improve our programming skills by meeting weekly and working on programm
 - managing / setting up a webserver
 
 ## Schedule
+When:   Every Saturday morning 8-9:30
+### *week 3*
+Who: Stephen  
+When: Sat Mar 30 8:00 AM 2013  
+Where: DevCave  
+What:  
+-   __Garbage Collection__  
+-   [symbols](http://rubylearning.com/satishtalim/ruby_symbols.html)  
+Prep:    
+-   read [symbols 1](http://rubylearning.com/satishtalim/ruby_symbols.html)  
+or  
+-   read [symbols 2](http://www.troubleshooters.com/codecorn/ruby/symbols.htm)  
+or  
+-   [pick a better explanation for symbols :-)](https://encrypted.google.com/search?hl=en&q=symbols%20in%20ruby)  
+
+
 ### *week 2*
 Who: Stephen  
-When:  
+When:  Sat Mar 23 8:00 AM 2013
 Where: DevCave  
 What:  Ruby and RTanque: __Battle day__  
 Prep:  
 [ruby-doc.org](http://www.ruby-doc.org/core-2.0/) ::: Bookmark it!   
 If you didn't do the quick start (below) before, do it for this time.  
-Fork [steptan's RTanque github repo](https://github.com/steptan/RTanque) so you can share your bot via pull request  
+~~Fork [steptan's RTanque github repo](https://github.com/steptan/RTanque)~~ so you can share your bot via pull request  
+(actually, the [study](https://github.com/steptan/study) repo has the bots in subdirectory called tank\_bots)  
 git@github.com:steptan/RTanque.git  
 __come ready to battle__  
 
@@ -31,30 +48,17 @@ When: Tue Mar 5 6:30 AM 2013
 Where: DevCave  
 What: Ruby and RTanque  
 Prep:   
+Do RTanque (aka tank) **Quick Start:** (below)  
+
   
-**Quick Start:**
-(run from the command line)  
-```bash
-mkdir rtanque; cd rtanque  
-echo '1.9.3' > .ruby-version  
-bundle init  
-echo "gem 'rtanque'" >> Gemfile  
-bundle  
-bundle exec rtanque new_bot my_bot  
-bundle exec rtanque start bots/my_bot sample_bots/keyboard sample_bots/camper:x2  
-```
-*Drive the Keyboard bot with asdf. Aim/fire with the arrow keys*  
-[http://awilliams.github.com/RTanque/](http://awilliams.github.com/RTanque/)
-
-
-## Challenge questions
-
--   Why doesn't 'git status' complain about the rtanque subfolder?  
-    -   *ANSWER:*  You have the folder "/rtanque/\*" listed in the .gitignore file.  *first*:Miles  
--   Who has forked this git repo on github?  
-    -   *COOLEST FIRST:*
-
 ## What we've learned
+### command line
+```bash
+ln -s
+```
+*   create a symbolic link, aka, shortcut
+*   ln -s ../study_group/tank_bots
+
 ### git
 History:  
 ```git
@@ -77,9 +81,18 @@ so + is a method on the Number class
 3.+(3)  
 ```
 
+#### [Constants](http://www.rubyist.net/~slagell/ruby/constants.html)
+*   Magic numbers are evil: use Constants instead
+*   Constants should not change, though Ruby seems to allow it, complains
+    * Class names are constants (everything in Ruby that starts with upper-case letter is a constant.
+
+#### [Symbols](http://rubylearning.com/satishtalim/ruby_symbols.html)
 #### Classes
-* Class-wide values accessed by appending :: to class name
+* :: ~~Class-wide~~ edit: see [:: "Scope Operator"](http://en.wikibooks.org/wiki/Ruby_by_examples#::_.28Scope_Operator.29)
+    * Class Values accessed by appending :: to class name
     * Static constants: Math::PI
+    * Package Declaration
+
 * Classes can be "instantiated" to create "instances" which are [Object](http://www.ruby-doc.org/core-2.0/Object.html)
 * Variables point to [Object](http://www.ruby-doc.org/core-2.0/Object.html)
 * [Instance variables](http://www.rubyist.net/~slagell/ruby/instancevars.html) persist across method calls and have a @ prepended
@@ -128,4 +141,28 @@ because now Ruby can concatinate 2 Strings: "5" and " little monkeys"
     - put the text of the link in square braces  
     - put the link inside parenthesis
 
+
+
+
+## RTanque (aka tank) **Quick Start:**
+(run from the command line)  
+```bash
+mkdir rtanque; cd rtanque  
+echo '1.9.3' > .ruby-version  
+bundle init  
+echo "gem 'rtanque'" >> Gemfile  
+bundle  
+bundle exec rtanque new_bot my_bot  
+bundle exec rtanque start bots/my_bot sample_bots/keyboard sample_bots/camper:x2  
+```
+*Drive the Keyboard bot with asdf. Aim/fire with the arrow keys*  
+[http://awilliams.github.com/RTanque/](http://awilliams.github.com/RTanque/)
+
+
+## Challenge questions
+
+-   Why doesn't 'git status' complain about the rtanque subfolder?  
+    -   *ANSWER:*  You have the folder "/rtanque/\*" listed in the .gitignore file.  *first*:Miles  
+-   Who has forked this git repo on github?  
+    -   *COOLEST FIRST:*
 
