@@ -12,35 +12,49 @@ class Roomba < RTanque::Bot::Brain
     RTanque::Heading::SW]
 
   OPTIONS = {
-    east:
+    e:
     [
       RTanque::Heading::W,
       RTanque::Heading::NW,
       RTanque::Heading::SW
     ],
-    west:
+    w:
     [
       RTanque::Heading::E,
       RTanque::Heading::NE,
       RTanque::Heading::SE
-
     ],
-    north:
+    n:
     [
       RTanque::Heading::S,
       RTanque::Heading::SE,
       RTanque::Heading::SW
-
     ],
-    south:
+    s:
     [
       RTanque::Heading::N,
       RTanque::Heading::NE,
       RTanque::Heading::NW
+    ],
+    nw:
+    [
+      RTanque::Heading::SE
+    ],
+    ne:
+    [
+      RTanque::Heading::SW
+    ],
+    sw:
+    [
+      RTanque::Heading::NE
+    ],
+    se:
+    [
+      RTanque::Heading::NW
     ]
   }
 
-  BORED_MAX_COUNT = 100
+  BUFFER = 5
 
   def initialize(arena)
     @arena = arena
@@ -48,13 +62,17 @@ class Roomba < RTanque::Bot::Brain
     # @heading = RTanque::Heading.new @direction_cycle.next
     @heading = DIRECTIONS.shuffle!.first
     @speed = 5
-    @buffer = 5
-    @bored_count = 0
+    @last_bored_location = nil
+    @wall = nil
   end
 
   def tick!
-    check_for_wall
-    check_for_open_air
+    unless @buffer_right
+      @buffer_right = arena.width - BUFFER
+      @buffer_bottom = arena.height - BUFFER
+    end
+
+    locate
     check_for_bored
     command.heading = @heading
     command.speed = @speed
@@ -62,54 +80,71 @@ class Roomba < RTanque::Bot::Brain
     # puts arena.width.to_s + ',' + arena.height.to_s
   end
 
-  def check_for_wall
-    return if @wall
+  def locate
+    puts "CORN: #{@corner} .. #{@wall}"
 
-    unless @buffer_right
-      @buffer_right = arena.width - @buffer
-      @buffer_bottom = arena.height - @buffer
+    if sensors.position.x > BUFFER &&
+      sensors.position.x < @buffer_right &&
+      sensors.position.y > BUFFER &&
+      sensors.position.y < @buffer_bottom
+
+      @last_bored_location = nil
+      @corner = nil
+      @wall = nil
     end
 
-    if sensors.position.x < @buffer
-      @wall = :west
+    return if @corner or @wall
+
+    if sensors.position.x < BUFFER
+      puts 'WEST'
+      if sensors.position.y < BUFFER
+        @corner = :nw
+      elsif sensors.position.y > @buffer_bottom
+        @corner = :sw
+      else
+        @wall = :w
+      end
     elsif sensors.position.x > @buffer_right
-      @wall = :east
-    elsif sensors.position.y < @buffer
-      @wall = :north
+      puts 'EAST'
+      if sensors.position.y < BUFFER
+        @corner = :ne
+      elsif sensors.position.y > @buffer_bottom
+        @corner = :se
+      else
+        @wall = :e
+      end
+    elsif sensors.position.y < BUFFER
+      puts 'SOUTH'
+      @wall = :s
     elsif sensors.position.y > @buffer_bottom
-      @wall = :south
+      puts 'NORTH'
+      @wall = :n
     else
       @wall = nil
-
-    reverse_heading
     end
+    puts "wall: #{@wall} #{sensors.position.x},#{sensors.position.y}" if @wall
   end
 
-  def check_for_open_air
-
-    if sensors.position.x > 1 &&
-       sensors.position.x < arena.width - 1 &&
-       sensors.position.y > 1 &&
-       sensors.position.y < arena.height - 1
-
-      @wall = nil
-    end
-   end
-
-  def reverse_heading
-    return unless @wall
-    @heading = OPTIONS[@wall].shuffle.first
-    puts @heading
+  def reverse
+    puts @last_bored_location
+    return unless @last_bored_location
+    @heading = OPTIONS[@last_bored_location].shuffle.first
+    puts "reverse heading to #{@heading}"
   end
 
   def check_for_bored
-    if @wall
-      @bored_count += 1
-      if @bored_count > BORED_MAX_COUNT
-        puts "BORED at #{@wall}"
-        reverse_heading
-        @bored_count = 0
-      end
+    if @corner and @corner != @last_bored_location
+      puts "BORED at #{@corner}"
+      @last_bored_location = @corner
+      reverse
+      @corner = nil
+    elsif @wall and @wall != @last_bored_location
+      puts "BORED at #{@wall}"
+      @last_bored_location = @wall
+      reverse
+      @wall = nil
+    else
+      puts @wall
     end
   end
 end

@@ -19,6 +19,8 @@ Who: Stephen
 When: Sat Mar 30 8:00 AM 2013  
 Where: DevCave  
 What:  
+-   git: diff and git diff --staged  
+-   git: log and git log -p  
 -   __Garbage Collection__  
 -   [symbols](http://rubylearning.com/satishtalim/ruby_symbols.html)  
 Prep:    
