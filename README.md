@@ -14,21 +14,52 @@ We will improve our programming skills by meeting weekly and working on programm
 
 ## Schedule
 When:   Every Saturday morning 8-9:30
+### *week 4*
+Who: Stephen  
+When: Sat Apr 06 8:00-9:30 2013  
+Where: DevCave  
+What:  Classes and Objects and Vars, Oh My!
+-   Ruby: instance variables 
+-   Ruby: static variables and methods
+-   Ruby: global variables (why are they evil?)
+-   Ruby: arrays and all their nifty functions
+    -   a1="this is a bunch of words".split
+    -   a2=%w{this is a bunch of words}
+    -   a1.join ', '
+-   Lots of great stuff last week. Review!
+
 ### *week 3*
 Who: Stephen  
 When: Sat Mar 30 8:00 AM 2013  
 Where: DevCave  
 What:  
--   git: diff and git diff --staged  
--   git: log and git log -p  
--   __Garbage Collection__  
--   [symbols](http://rubylearning.com/satishtalim/ruby_symbols.html)  
-Prep:    
--   read [symbols 1](http://rubylearning.com/satishtalim/ruby_symbols.html)  
+-   Ruby: what does initialize method do?
+    - how is it invoked?
+    - how is it useful?
+-   Ruby idiosyncracies part 1
+    -   what does _!_ do?
+    -   when _!_ is part of a method name, what does that usually mean?
+    -   what does _?_ do?
+    -   when _?_ is part of a method name, what does that usually mean?
+-   Constants: any string that starts with upper-case letter
+    -   legible constants use underscores: ICE_CREAM_FLAVOR = "pralines and cream"
+    Variables
+    -   start with lower-case letter
+    -   by convention, use underscore: current_ = 
+-   Ruby: how are variables like pointers?
+-   git: diff and git diff --staged
+-   git: log and git log -p
+-   git: man git-log (note the hyphen)
+-   __Garbage Collection__
+    - sweep, reference counting
+    - memory leaks: (anti pattern) how can one leak memory in Ruby?
+-   [symbols](http://rubylearning.com/satishtalim/ruby_symbols.html)
+Prep:  
+-   read [symbols 1](http://rubylearning.com/satishtalim/ruby_symbols.html)
 or  
--   read [symbols 2](http://www.troubleshooters.com/codecorn/ruby/symbols.htm)  
+-   read [symbols 2](http://www.troubleshooters.com/codecorn/ruby/symbols.htm)
 or  
--   [pick a better explanation for symbols :-)](https://encrypted.google.com/search?hl=en&q=symbols%20in%20ruby)  
+-   [pick a better explanation for symbols :-)](https://encrypted.google.com/search?hl=en&q=symbols%20in%20ruby)
 
 
 ### *week 2*
@@ -161,10 +192,10 @@ bundle exec rtanque start bots/my_bot sample_bots/keyboard sample_bots/camper:x2
 [http://awilliams.github.com/RTanque/](http://awilliams.github.com/RTanque/)
 
 
-## Challenge questions
-
--   Why doesn't 'git status' complain about the rtanque subfolder?  
-    -   *ANSWER:*  You have the folder "/rtanque/\*" listed in the .gitignore file.  *first*:Miles  
--   Who has forked this git repo on github?  
-    -   *COOLEST FIRST:*
-
+## next subjects
+-   blocks in ruby
+  
+  
+```ruby  
+    (1..5).each {|num| puts 2*num}  
+```  

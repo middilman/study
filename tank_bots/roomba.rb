@@ -76,12 +76,12 @@ class Roomba < RTanque::Bot::Brain
     check_for_bored
     command.heading = @heading
     command.speed = @speed
-    # puts sensors.position.x.to_s + ',' + sensors.position.y.to_s
-    # puts arena.width.to_s + ',' + arena.height.to_s
+    # puts_selective sensors.position.x.to_s + ',' + sensors.position.y.to_s
+    # puts_selective arena.width.to_s + ',' + arena.height.to_s
   end
 
   def locate
-    puts "CORN: #{@corner} .. #{@wall}"
+    puts_selective "CORN: #{@corner} .. #{@wall}"
 
     if sensors.position.x > BUFFER &&
       sensors.position.x < @buffer_right &&
@@ -96,7 +96,7 @@ class Roomba < RTanque::Bot::Brain
     return if @corner or @wall
 
     if sensors.position.x < BUFFER
-      puts 'WEST'
+      puts_selective 'WEST'
       if sensors.position.y < BUFFER
         @corner = :nw
       elsif sensors.position.y > @buffer_bottom
@@ -105,7 +105,7 @@ class Roomba < RTanque::Bot::Brain
         @wall = :w
       end
     elsif sensors.position.x > @buffer_right
-      puts 'EAST'
+      puts_selective 'EAST'
       if sensors.position.y < BUFFER
         @corner = :ne
       elsif sensors.position.y > @buffer_bottom
@@ -114,37 +114,45 @@ class Roomba < RTanque::Bot::Brain
         @wall = :e
       end
     elsif sensors.position.y < BUFFER
-      puts 'SOUTH'
+      puts_selective 'SOUTH'
       @wall = :s
     elsif sensors.position.y > @buffer_bottom
-      puts 'NORTH'
+      puts_selective 'NORTH'
       @wall = :n
     else
       @wall = nil
     end
-    puts "wall: #{@wall} #{sensors.position.x},#{sensors.position.y}" if @wall
+    puts_selective "wall: #{@wall} #{sensors.position.x},#{sensors.position.y}" if @wall
   end
 
   def reverse
-    puts @last_bored_location
+    puts_selective @last_bored_location
     return unless @last_bored_location
     @heading = OPTIONS[@last_bored_location].shuffle.first
-    puts "reverse heading to #{@heading}"
+    puts_selective "reverse heading to #{@heading}"
   end
 
   def check_for_bored
     if @corner and @corner != @last_bored_location
-      puts "BORED at #{@corner}"
+      puts_selective "BORED at #{@corner}"
       @last_bored_location = @corner
       reverse
       @corner = nil
     elsif @wall and @wall != @last_bored_location
-      puts "BORED at #{@wall}"
+      puts_selective "BORED at #{@wall}"
       @last_bored_location = @wall
       reverse
       @wall = nil
     else
-      puts @wall
+      puts_selective @wall
     end
   end
+
+  def puts_selective (text)
+      # puts_selective text
+  end
+
+
+
+
 end
