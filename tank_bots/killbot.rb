@@ -2,64 +2,84 @@ class Killbot < RTanque::Bot::Brain
 	NAME = 'Killbot'
 	include RTanque::Bot::BrainHelper
 
-	CORNERS = [:NW, :NE, :SE, :SW]
-	TURRET_FIRE_RANGE = RTanque::Heading::ONE_DEGREE * 1.5
+	GO =
+		[RTanque::Heading::N,
+    	RTanque::Heading::S,
+    	RTanque::Heading::E,
+    	RTanque::Heading::W,
+    	RTanque::Heading::NE,
+    	RTanque::Heading::SE,
+    	RTanque::Heading::NW,
+    	RTanque::Heading::SW]
+
+  AIMS = [RTanque::Heading::N,
+    	RTanque::Heading::S,
+    	RTanque::Heading::E,
+    	RTanque::Heading::W,
+    	RTanque::Heading::NE,
+    	RTanque::Heading::SE,
+    	RTanque::Heading::NW,
+    	RTanque::Heading::SW]
+
+	TIMER = 100
+	SHOTS = 4
+	def initialize(arena)
+		@direction_cycle = GO.shuffle.cycle
+		@arena = arena
+		@heading = GO.shuffle!.first
+		@speed = 20
+		@buffer = 5
+		@timer = 0
+		@shoter = 0
+		@off = 0
+		@target = AIMS.shuffle!.last
+	end
 
 	def tick!
-		if sensors.health < 10
-			!dead
-		end
-		command.heading = 2* Math::PI 
-		command.radar_heading = 2* Math::PI 
-		command.turret_heading = 2* Math::PI 
-		command.fire(17)
-=begin
-		if self.position == on_top_wall
-			command.speed = 3
-			command.heading = 20
-			command.radar_heading =  -Math::PI / 2.0
-			command.turret_heading = -Math::E / 2.0
-			command.fire(17)
-		elsif self.position == on_bottom_wall
-			command.speed = 3
-			command.heading = 20
-			command.radar_heading ==  -10
-			command.turret_heading = -10
-			command.fire(17)
-		elsif self.position == on_left_wall
-			command.speed = 1
-			command.heading = 20
-			command.radar_heading = 10
-			command.turret_heading = 10
-			command.fire(17)
-		else
-			command.speed = 10
-			command.heading = 20
-			command.radar_heading =  -Math::PI / 2.0
-			command.turret_heading = -Math::E / 2.0
-			command.fire(3)
-		end
+		check_for_timer
+		shot_timer
+		command.fire
+		command.fire
+		command.fire
+		command.heading = @heading
+		command.speed = @speed
+		#command.radar_heading = @target # RTanque::Heading
+    command.turret_heading = @heading#@target # RTanque::Heading
+	end
 
+	def change_heading
+		@heading = GO.shuffle!.first
+	end
+
+	def change_target
+	@target = AIMS.shuffle!.first
+=begin		if @off <= 7
+		@target = AIMS[@off]
+		@off +=1
+		else
+			@off = 0
+		end
 =end
 	end
 
-	def corner=(corner_name)
-    @corner = case corner_name
-      when :NE
-        [self.arena.width, self.arena.height]
-      when :SE
-        [self.arena.width, 0]
-      when :SW
-        [0, 0]
-      else
-        [0, self.arena.height]
-    end
-  end
+	def shot_timer
+		if sensors.health < 101
+			@shoter += 1
+			if @shoter > SHOTS
+				change_target
+				@shoter = 0
+			end
+		end
+	end
 
-  def corner
-  	@corner
-  end
+	def check_for_timer
+		if sensors.health < 101
+			@timer += 1
+			if @timer > TIMER
+				change_heading
+				@timer = 0
+			end	
 
-	
-
-  end
+		end
+	end	
+ end
