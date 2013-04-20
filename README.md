@@ -14,6 +14,18 @@ We will improve our programming skills by meeting weekly and working on programm
 
 ## Schedule
 When:   Every Saturday morning 8-9:30
+### *week 5*
+Who: Stephen  
+When: Sat Apr 13 8:00-9:30 2013  
+Where: DevCave  
+What:  Programming, from the beginning
+-   computers are dumb
+-   people are smart
+-   programming is just telling the computer what to do
+-   (miles) exercise 
+    -   can make you smarter
+    -   can help you solve stumper problems  
+
 ### *week 4*
 Who: Stephen  
 When: Sat Apr 06 8:00-9:30 2013  
