@@ -1,0 +1,26 @@
+colored ball example: more in-depth
+
+how do we track changes we make?
+how do we go back in time?
+how do we collaborate with others?
+
+how do we share changes when we're working on the same file?
+
+alphabet example:
+alphabet.txt
+a
+->
+a
+b
+->
+a
+c
+b
+
+
+git log
+git add
+git commit -m
+
+git diff
+    shows us difference between [ now ]  and  [ then ]  not all intervening steps

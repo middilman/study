@@ -1,0 +1,120 @@
+----------------------------------------------------------------------
+computers are dumb and people are smart
+
+programming is giving the computer instructions
+
+pseudocode: program like you say it
+
+comments are for people
+
+compiled vs interpreted
+
+we will use interpreted languages:
+    javascript
+    ruby
+    html
+    css
+
+======================================================================
+[ review back to here ]
+======================================================================
+bash: the command line: basic commands
+    ls
+    cd
+    mv
+    mkdir
+    echo
+    echo (redirect to file)
+        echo "Happy?" > feeling.txt
+    cat (cat pukes file's contents)
+
+git: 
+    why use the command line? 
+    revision control and source code management
+    
+    git add
+    git commit -m 'The message to remind me what this was about.'
+    git log
+    git diff
+
+======================================================================
+[ next lesson starts here ]
+======================================================================
+review (from topics.txt)
+
+1) boolean 
+  what does boolean mean?
+  computers love binary... and so do we!
+    yes or no
+    1 or 0
+    true or false
+
+  if
+  unless
+
+  operators: &&, ||, !
+
+  () make intent clear (and control order of operations)
+
+  [ clean this up ]
+    if have_ticket && is_raining || is_snowing && headed_to_beach && going_by_plane
+  
+  [ codecademy's confusing example ]
+    http://www.codecademy.com/courses/ruby-beginner-en-NFCZ7/2/4
+
+2) objects
+  classes are blueprints
+  creating objects
+
+  class User
+  end
+
+
+======================================================================
+
+single ' vs "
+why doesn't this work?
+    print 'Adios, #{my_string}!'
+
+string interpolation
+    print "Adios, #{my_string}!"
+
+then why use '?
+
+
+our first website
+    github
+    heroku
+
+counting like a computer
+    base 10
+    base 2
+    base 16
+
+----------------------------------------------------------------------
+
+short-circuiting || when first arg true
+    explain short-circuiting && when first arg false
+    examples:  
+        happy = true || sunshine == true
+        second part never evaluated
+
+regular expressions basics
+    .gsub! /s/ 'th'
+
+sorting algorythms
+user stories
+TDD
+agile programming
+when (not) to optimize?
+loose coupling
+dependency injection
+
+
+>> explain short-circuiting || when first arg true
+>> explain short-circuiting && when first arg false
+>> examples:  
+    happy = true || sunshine == true
+    >> second part never evaluated
+
+----------------------------------------------------------------------

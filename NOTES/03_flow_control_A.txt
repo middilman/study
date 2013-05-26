@@ -1,0 +1,21 @@
+control flow
+how programmers make decisions
+
+the power of if
+    if
+    else
+    elsif
+    end
+
+    unless
+
+loops
+    while
+    until
+
+for next time...
+
+codecademy
+    2. control flow
+    3. looping with ruby
+

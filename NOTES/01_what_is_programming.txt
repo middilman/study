@@ -1,0 +1,78 @@
+programming computers
+    you need a basis for telling a computer what to do
+        that's a programming language
+
+    what are some examples of standards we use to communicate with each other?
+        musical notes
+        facial expressions
+        early on, knots
+
+    what if you only had rocks to communicate with someone?
+        say you live in a cave, and when you leave, someone else comes. So, you're there in
+        shifts. All you have to leave a message with is rocks. How would you communicate a
+        number with rocks?
+        3?
+        13?
+        310?
+
+computers are dumb
+    dunce cap: 
+        http://farm1.static.flickr.com/98/228198624_b5a87202cc.jpg
+    
+    do exactly what they are told
+    only understand flawless instructions
+    only read 1s and 0s
+
+people are smart
+    playground, teeter-totter
+        http://3.bp.blogspot.com/-mSAvZycGku8/TiwaYlrwSaI/AAAAAAAAAEo/GuDXQyWgJSU/s1600/Mdina+playground.jpg
+
+    see
+    interpret
+    infer/imply
+    learn languages
+
+
+programming is giving the computer instructions
+
+
+how do people program in everyday life?
+    to-do list
+    potty-training
+    assembling ikea furniture
+    setting an alarm clock
+
+    recipes
+        http://www.myrecipes.com/recipe/curried-chicken-salad-with-apples-raisins-10000001087108/
+        http://www.myrecipes.com/recipe/ultimate-chocolate-chip-cookies-10000001042017/
+
+        read
+        know numbers
+        standards (brown sugar is packed)
+
+        human being
+            humans substitute apples
+            don't follow recipes
+            can't convey the instructions
+
+        inexact
+            wing it
+            fly by the seat of your pants
+            guestimate
+            eyeball it
+
+        why do humans estimate?
+
+pseudocode
+    meta programming language
+
+comments are for people, ignored by computers
+    annotations
+
+
+so, what does it mean to program a computer?
+    create instructions
+    in a language the computer understands
+    give the computer the instructions
+    ask the computer to run the instructions
+

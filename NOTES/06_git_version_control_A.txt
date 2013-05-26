@@ -1,0 +1,7 @@
+colored ball example
+
+how do we track changes we make?
+
+how do we go back in time?
+
+how do we collaborate with others?
