@@ -18,25 +18,10 @@ we will use interpreted languages:
 ======================================================================
 [ review back to here ]
 ======================================================================
-bash: the command line: basic commands
-    ls
-    cd
-    mv
-    mkdir
-    echo
-    echo (redirect to file)
-        echo "Happy?" > feeling.txt
-    cat (cat pukes file's contents)
-
-git: 
-    why use the command line? 
+07 - command line
+07 - git
     revision control and source code management
     
-    git add
-    git commit -m 'The message to remind me what this was about.'
-    git log
-    git diff
-
 ======================================================================
 [ next lesson starts here ]
 ======================================================================

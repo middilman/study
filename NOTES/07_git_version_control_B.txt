@@ -1,26 +1,112 @@
-colored ball example: more in-depth
+----------------------------------------------------------------------
+command line
+----------------------------------------------------------------------
 
-how do we track changes we make?
-how do we go back in time?
-how do we collaborate with others?
+essential commands
 
-how do we share changes when we're working on the same file?
+/
+  * what does the initial slash mean?
+  * why is this much simpler than Windows?
 
-alphabet example:
-alphabet.txt
-a
-->
-a
-b
-->
-a
-c
-b
+pwd
+  * "print current (working) directory"
+  
+cd
+  * change directory
 
+/Users/sfelt
+  * everyone gets a home folder
+
+mv
+  * "move"
+  * put a file in a different folder
+  * rename a file
+
+rm
+  * "remove"
+  * delete a file
+
+ls
+  * "list"
+  * list files in a folder
+
+echo "Is there an echo in here?"
+  * "tell me what I said"
+
+echo "Happy?" > feeling.txt
+  * redirect to file)
+
+cat feeling.txt
+  * "cat pukes file's contents"
+
+
+** passing arguments to commands
+
+ls -a
+  . 
+    * your current directory
+  .. 
+    * parent directory
+  .hidden  
+    * prepend a . to a folder or file name to hide them
+
+whoami
+  * computer: tell me my username
+
+----------------------------------------------------------------------
+git
+----------------------------------------------------------------------
+git: colored ball example
+  * track changes we have made
+  * go back in time
+  * collaborate with others
+
+collaboration
+  * how do we share changes when we're working on the same file?
+  * what if we change the same line?
 
 git log
+  * view the "captain's log" of our changes
+  * note the 
+    * "hash"
+    * date
+    * responsible person
+    * commit message
+
 git add
+  * add files to the "stage"
+  * get things ready for next commit
+  * don't add things you don't want to commit yet
+
 git commit -m
+  * commit things to the log
+  * save a snapshot of what you're working on
+
+alphabet example:
+  alphabet.txt git workflow
+    a
+    ->
+    a
+    b
+    ->
+    a
+    c
+    b
+    ->
+    a
+    b
+    c
+
+git status
+  * have I forgotten anything?
 
 git diff
-    shows us difference between [ now ]  and  [ then ]  not all intervening steps
+  * shows us difference between [ now ]  and  [ then ]  not all intervening steps
+
+but why use the command line? 
+  * you have powerful tools
+  * slignt changes to commands you know give you very different info
+    git log -p
+    git log --pretty=oneline
+
+
