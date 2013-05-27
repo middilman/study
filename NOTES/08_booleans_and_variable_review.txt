@@ -1,0 +1,27 @@
+boolean 
+  * what does boolean mean?
+  * computers love binary... and so do we!
+    yes or no
+    1 or 0
+    true or false
+
+&&, ||
+  * "and", "or"
+  * computer will cheat if it can and ignore second part
+
+!
+  * "not"
+  * invert meaning
+
+( ) 
+  * make intent clear (and control order things are considered)
+
+flow control revisited: making decisions
+  if
+  unless
+
+[ clean this up ]
+  if have_ticket && is_raining || is_snowing && headed_to_beach && going_by_plane
+
+[ codecademy's confusing example ]
+  http://www.codecademy.com/courses/ruby-beginner-en-NFCZ7/2/4

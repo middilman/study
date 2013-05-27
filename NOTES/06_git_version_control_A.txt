@@ -1,7 +1,17 @@
 colored ball example
 
-how do we track changes we make?
+git
+  helps us track changes we make
+  helps us go back in time... with our text files
+  have you ever saved files this way?
+    report_v1.txt
+    report_v2.txt
+    report_v3.txt
+    report_v4.txt
+  helps us collaborate with others
 
-how do we go back in time?
+"git"ting started
+  git init
 
-how do we collaborate with others?
+github
+  where open source software is shared and collaboration happens

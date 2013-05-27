@@ -1,51 +1,41 @@
 ----------------------------------------------------------------------
-computers are dumb and people are smart
+00 - why learn programming?
+01 - what is programming?
+  computers are dumb and people are smart
+  programming: sharing your smarts with the computer
+  programming: getting the computer to do something useful
 
-programming is giving the computer instructions
+02 - pseudo programming
+  pseudocode: just program like you say it
+  comments: a great pseudocode way to start
+  comments: for people, computer ignores them
+  compiled vs interpreted
+  we will be learning with interpreted languages:
+      javascript
+      ruby
+      html
+      css
 
-pseudocode: program like you say it
-
-comments are for people
-
-compiled vs interpreted
-
-we will use interpreted languages:
-    javascript
-    ruby
-    html
-    css
+03 - flow control
+  making decisions: the heart of programming
 
 ======================================================================
 [ review back to here ]
 ======================================================================
-07 - command line
-07 - git
-    revision control and source code management
+04 - flow control
+  conditional operators
+  = (assignment) != (is not the same as) == (comparision)
+
+05 - flow control revisited
+  codecademy begins!
+
+06 - git version control
+07 - git and essential command line commands
     
 ======================================================================
 [ next lesson starts here ]
 ======================================================================
-review (from topics.txt)
-
-1) boolean 
-  what does boolean mean?
-  computers love binary... and so do we!
-    yes or no
-    1 or 0
-    true or false
-
-  if
-  unless
-
-  operators: &&, ||, !
-
-  () make intent clear (and control order of operations)
-
-  [ clean this up ]
-    if have_ticket && is_raining || is_snowing && headed_to_beach && going_by_plane
-  
-  [ codecademy's confusing example ]
-    http://www.codecademy.com/courses/ruby-beginner-en-NFCZ7/2/4
+08 - booleans
 
 2) objects
   classes are blueprints
