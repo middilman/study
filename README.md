@@ -1,6 +1,9 @@
 # mi study group
+Start in the NOTES directory (the box above this one, if you're on github). That's where all
+notes for past lessons can be found. Also, the notes for the next lesson will be there.
 
-We will improve our programming skills by meeting weekly and working on programming stuff.
+## Goal
+improve our programming skills by meeting weekly and working on programming stuff.
 
 ## Topics
 - ruby
