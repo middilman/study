@@ -25,3 +25,17 @@ flow control revisited: making decisions
 
 [ codecademy's confusing example ]
   http://www.codecademy.com/courses/ruby-beginner-en-NFCZ7/2/4
+
+local variables
+  * start with a letter
+
+instance variables
+  * start with @
+  * you get a copy of the variable with each instance
+
+static variables
+  * start with @@
+  * you get one of these variables per class
+ 
+global variables
+  * name starts with $
