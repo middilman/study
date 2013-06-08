@@ -1,0 +1,7 @@
+Class responsibility
+
+Classes should control their own attributes (instance variables)
+
+why do we need attr_reader and attr_writer?
+
+why not just use attr_accessor ?
